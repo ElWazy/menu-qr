@@ -1,0 +1,20 @@
+---
+import Layout from "./Layout.astro";
+---
+
+<Layout title="Tregul">
+    <a href="/tregul">volver a tregul</a>
+    <section
+        transition:animate="slide"
+        class="flex gap-7 justify-center items-center flex-wrap text-white px-8% py-20"
+    >
+        <slot />
+    </section>
+</Layout>
+
+<style>
+    section {
+        width: 100%;
+        min-height: calc(100vh - 52px);
+    }
+</style>

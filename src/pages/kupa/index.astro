@@ -1,0 +1,34 @@
+---
+import { getCollection } from "astro:content";
+import Card from "../../components/Card.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const kupas = await getCollection("kupa");
+---
+
+<Layout title="Welcome to Astro.">
+	<section class="section-cards">
+		{
+			kupas.map((kupa) => (
+				<Card
+					title={kupa.data.title}
+					image={kupa.data.image}
+					body={kupa.data.shortDescription}
+					href={`/kupa/${kupa.slug}`}
+					price={kupa.data.price}
+				/>
+			))
+		}
+	</section>
+
+	<style>
+		.section-cards {
+			width: 100%;
+			height: auto;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 60px;
+		}
+	</style>
+</Layout>
