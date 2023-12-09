@@ -6,7 +6,11 @@ import Layout from "../../layouts/Layout.astro";
 const treguls = await getCollection("tregul");
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Menú de Tregül">
+	<header class="flex justify-center items-center my-16">
+		<h1 class="text-5xl">Tregül</h1>
+	</header>
+	
 	<section class="section-cards">
 		{
 			treguls.map((tregul) => (

@@ -6,7 +6,11 @@ import Layout from "../../layouts/Layout.astro";
 const kupas = await getCollection("kupa");
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Menú de Küpa">
+	<header class="flex justify-center items-center my-16">
+		<h1 class="text-5xl">Küpa</h1>
+	</header>
+
 	<section class="section-cards">
 		{
 			kupas.map((kupa) => (
